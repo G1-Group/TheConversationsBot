@@ -5,5 +5,6 @@
         Console.WriteLine("Hello World");
         Console.WriteLine("test");
         Console.WriteLine("Hello zuxriddin");
+        Console.WriteLine("Hello 12");
     }
 }
