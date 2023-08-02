@@ -2,5 +2,6 @@
 
 public enum MessageType
 {
-    
+    BoardMessage,
+    AnonymChatMessage
 }
