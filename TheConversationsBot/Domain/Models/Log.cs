@@ -2,5 +2,6 @@
 
 public class Log
 {
+    public long ClientId { get; set; }
     
 }
