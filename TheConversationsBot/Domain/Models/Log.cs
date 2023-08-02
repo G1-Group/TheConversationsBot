@@ -2,6 +2,9 @@
 
 public class Log
 {
-    public long ClientId { get; set; }
-    
+    public DateTime Date { get; set; }
+    public long FromId { get; set; }
+    public long ToId { get; set; }
+    public string Action { get; set; }
+    public string ExceptionMessage { get; set; }
 }
