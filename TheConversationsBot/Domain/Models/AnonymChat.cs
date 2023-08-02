@@ -1,5 +1,4 @@
-﻿using System;
-using TheConversationsBot.Domain.Enums;
+﻿namespace TheConversationsBot.Domain.Enums;
 
 public class AnonymChat
 {
