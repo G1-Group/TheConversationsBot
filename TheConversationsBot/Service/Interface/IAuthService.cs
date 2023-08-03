@@ -2,8 +2,8 @@ namespace TheConversationsBot.Service.Interface;
 
 public interface IAuthService
 {
-    Task<bool> CheckClient(long TelegramClientID);
+    Task<bool> CheckClientAsync(long TelegramClientID);
 
-    Task<bool> CheckClientRegistration(long TelegramClientID);
+    Task<bool> CheckClientRegistrationAsync(long TelegramClientID);
 
 }
