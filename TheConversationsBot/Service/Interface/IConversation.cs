@@ -21,7 +21,7 @@ public interface IConversation
 
     Task<bool> CheckAviableClient(List<Client> clients);
 
-
+    Task DelateFromRoomStartConversation((long, long) CleaningRoom);
     Task AddClientsToRoom(long TelegramClientId);
 
     Task<bool> StopCommand(long TelegramClientChatId);
