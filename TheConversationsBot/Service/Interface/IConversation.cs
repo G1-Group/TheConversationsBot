@@ -25,4 +25,6 @@ public interface IConversation
     Task AddClientsToRoom(long TelegramClientId);
 
     Task<bool> StopCommand(long TelegramClientChatId);
+
+    Task DelateConversationFromRoom(long TelegramChatId);
 }
