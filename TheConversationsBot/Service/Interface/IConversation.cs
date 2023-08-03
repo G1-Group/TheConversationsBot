@@ -15,6 +15,7 @@ public interface IConversation
     Task<bool> CheckConversationLimit(long TelegramClientId);
 
     Task CreateRoom((long,long)RoomForCouple);
+    Task TelegramChatID(long TelegramID);
 
 
 
