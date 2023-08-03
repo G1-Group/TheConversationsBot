@@ -9,6 +9,7 @@ public interface IAuthService
     Task<bool> RegistrationNickname(String Nicknam);
     Task<bool> CheckPasswordAsync(string Password);
     Task<bool> CheckNickNameAsync(string NickName);
-    
+    Task<bool> CheskPhoneNumber(string Number);
+
 
 }   
