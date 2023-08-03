@@ -11,7 +11,12 @@ public interface IConversation
     Task LastConversationAsync(long TelegramClientId);
     Task<bool> CheckConversationLimit(long TelegramClientId);
 
-    Task CreateRoom((long, long) RoomForCouple);
+
+    Task CreateRoom((long,long)RoomForCouple);
+    Task TelegramChatID(long TelegramID);
+
+
+
 
 
     Task<bool> CheckAviableClient(List<Client> clients);
