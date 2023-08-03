@@ -6,4 +6,7 @@ public interface IAuthService
 
     Task<bool> CheckClientRegistration(long TelegramClientID);
 
+    Task<bool> CheckPasswordAsync(string passWord);
+    Task<bool> CheckNickNameAsync(string NickName);
+
 }
