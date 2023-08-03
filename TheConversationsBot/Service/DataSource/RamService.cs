@@ -1,6 +1,6 @@
 namespace TheConversationsBot.Service.Interface;
 
-public class RamService
+public partial class RamService
 {
     
 }

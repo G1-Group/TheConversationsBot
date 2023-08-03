@@ -1,6 +1,6 @@
 namespace TheConversationsBot.Service.Interface;
 
-public class FaylService
+public partial class FaylService
 {
     
 }

@@ -1,6 +1,6 @@
 namespace TheConversationsBot.Service.Interface;
 
-public class DataProvider
+public partial class DataProvider
 {
     
 }

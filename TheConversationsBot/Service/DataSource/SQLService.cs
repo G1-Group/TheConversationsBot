@@ -1,6 +1,6 @@
 namespace TheConversationsBot.Service.Interface;
 
-public class SQLService
+public partial class SQLService
 {
     
 }
