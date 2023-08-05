@@ -1,4 +1,5 @@
-﻿class Program
+﻿
+class Program
 {
     static void Main(string[] args)
     {
@@ -6,5 +7,7 @@
         Console.WriteLine("test");
         Console.WriteLine("Hello zuxriddin");
         Console.WriteLine("Hello 12");
+        
+        
     }
 }
