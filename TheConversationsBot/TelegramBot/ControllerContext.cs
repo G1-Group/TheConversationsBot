@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheConversationsBot.TelegramBot
 {
-    internal class ControllerContext
+    public class ControllerContext
     {
     }
 }
