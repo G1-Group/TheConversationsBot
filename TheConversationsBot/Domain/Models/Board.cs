@@ -1,9 +1,10 @@
+using System.ComponentModel;
+
 namespace TheConversationsBot.Domain.Models;
 
 public class Board
 {
- 
-    public long BoardId  { get; set; }
-    public string Nickname { get; set; }
-    public long OwnerId { get; set; }
+    [Description("id")] public long BoardId { get; set; }
+    [Description("nickname")] public string Nickname { get; set; }
+    [Description("owner_id")] public long OwnerId { get; set; }
 }
