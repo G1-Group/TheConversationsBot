@@ -4,5 +4,5 @@ namespace TheConversationsBot.Service.Interface;
 
 public interface IAuthService
 {
-    public Task<Client> UserID(User user);
+    public Task<Client> Registration(User user);
 }
