@@ -15,4 +15,15 @@ public class AuthService : IAuthService
         return client;
         
     }
+
+
+    public async Task<User> Login(string phoneNumber, string password)
+    {
+        User user = new User()
+        {
+            PhoneNumber = phoneNumber,
+            Password = password
+        };
+        return user;
+    }
 }
