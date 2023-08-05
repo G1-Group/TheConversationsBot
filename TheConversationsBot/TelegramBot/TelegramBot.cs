@@ -9,6 +9,13 @@ public class TelegramBot
     private TelegramBotClient bot;
     private string token = "6171119365:AAHuWwdkJU2B60_V9wd0hs5G3hanYCKXaas";
 
+    public delegate Task UpdateHandlerDelegate
+    (ITelegramBotClient bot,
+        Update update,
+        CancellationToken cancellationToken);
+
+    List<UpdateHandlerDelegate> updateHandlers = new List<UpdateHandlerDelegate>();
+
     public void Start()
     {
         bot = new TelegramBotClient(token);
