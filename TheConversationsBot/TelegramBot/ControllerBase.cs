@@ -5,11 +5,11 @@ namespace TheConversationsBot.TelegramBot;
 
 public abstract class ControllerBase
 {
-    private TelegramBotClient BotClient;
+    protected ITelegramBotClient _botClient;
 
-    protected ControllerBase(TelegramBotClient botClient)
+    protected ControllerBase(ITelegramBotClient botClient)
     {
-        BotClient = botClient;
+        _botClient = botClient;
     }
     
     public abstract void HandleAction(ControllerContext context);
