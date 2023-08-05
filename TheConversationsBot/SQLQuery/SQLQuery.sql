@@ -8,6 +8,7 @@ create table TCB.users
     password           varchar(24)
 );
 
+
 create table TCB.clients
 (
     client_id        int PRIMARY KEY,
@@ -48,7 +49,6 @@ create table TCB.anonym_chats
     FOREIGN KEY (to_id)
         REFERENCES TCB.clients (client_id)
 );
-
 
 
 create table TCB.boards
