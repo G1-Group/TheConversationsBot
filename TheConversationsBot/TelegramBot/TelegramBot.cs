@@ -14,8 +14,12 @@ public class TelegramBot
         Update update,
         CancellationToken cancellationToken);
 
-    List<UpdateHandlerDelegate> updateHandlers = new List<UpdateHandlerDelegate>();
+    public List<UpdateHandlerDelegate> _updateHandlers ;
 
+    public TelegramBot()
+    {
+        _updateHandlers = new List<UpdateHandlerDelegate>();
+    }
     public void Start()
     {
         bot = new TelegramBotClient(token);
