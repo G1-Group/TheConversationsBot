@@ -5,7 +5,7 @@ namespace TheConversationsBot.Service;
 
 public class BoardServiceService : IBoardService
 {
-    public async Task<Board> CreateBoard(Client client, string nickname)
+    public async Task<Board> CreateBoardAsync(Client client, string nickname)
     {
         Board board = new Board()
         {
