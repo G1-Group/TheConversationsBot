@@ -14,5 +14,9 @@ public class BoardServiceService : IBoardService
         };
         return board;
     }
-    
+
+    public Task<Message> SendMessage(long boardId, string message)
+    {
+        throw new NotImplementedException();
+    }
 }
