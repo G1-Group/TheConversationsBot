@@ -11,4 +11,8 @@
       <PackageReference Include="Npgsql" Version="8.0.0-preview.4" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="TelegramBot\" />
+    </ItemGroup>
+
 </Project>
