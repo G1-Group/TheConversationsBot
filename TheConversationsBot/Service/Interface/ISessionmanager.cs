@@ -1,4 +1,4 @@
-namespace TheConversationsBot.Service
+namespace TheConversationsBot.Service.Interface
 {
     public interface ISessionManager<T>
     {

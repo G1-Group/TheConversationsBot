@@ -1,5 +1,6 @@
 
 using TheConversationsBot.Domain.Models;
+using TheConversationsBot.Service.Interface;
 using TheConversationsBot.TelegramBot;
 
 namespace TheConversationsBot.Service
