@@ -5,9 +5,15 @@ namespace TheConversationsBot.Service;
 
 public class AuthService : IAuthService
 {
-    public Task<Client> UserID(User user)
+    public async Task<Client> Registration(User user)
     {
-        throw new NotImplementedException();
+        Client client = new Client()
+        {
+            UserId = user.Id,
+            TelegramChatId = user.TelegramClientId
+        };
+        return client;
+        
     }
 
 
