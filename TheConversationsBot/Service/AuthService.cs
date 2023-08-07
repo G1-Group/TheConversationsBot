@@ -9,7 +9,7 @@ public class AuthService : IAuthService
     {
         Client client = new Client()
         {
-            UserId = user.Id,
+            UserId = user.UserId,
             TelegramChatId = user.TelegramClientId
         };
         return client;
