@@ -1,6 +1,6 @@
 using TheConversationsBot.Domain.Models;
 
-namespace TheConversationsBot.Service.Interface;
+namespace TheConversationsBot.Service.DataSource;
 
 public partial class SQLService
 {

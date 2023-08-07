@@ -1,6 +1,6 @@
 using Npgsql;
 
-namespace TheConversationsBot.Service.Interface;
+namespace TheConversationsBot.Service.DataSource;
 
 public class DataProvider
 {

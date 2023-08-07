@@ -1,4 +1,4 @@
-namespace TheConversationsBot.Service.Interface;
+namespace TheConversationsBot.Service.DataSource;
 
 public partial class SQLService : DataProvider
 {

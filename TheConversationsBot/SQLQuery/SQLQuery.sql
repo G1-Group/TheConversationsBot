@@ -1,8 +1,7 @@
 create schema TCB;
-
 create table TCB.users
 (
-    id                 int PRIMARY KEY,
+    id                 serial PRIMARY KEY,
     telegram_client_id int,
     phone_number       varchar(13),
     password           varchar(24)
@@ -11,7 +10,7 @@ create table TCB.users
 
 create table TCB.clients
 (
-    client_id        int PRIMARY KEY,
+    client_id        serial PRIMARY KEY,
     user_id          int,
     telegram_chat_id int,
     nickname         varchar(30),
@@ -43,7 +42,7 @@ create table TCB.anonym_chats
     from_id     int,
     to_id       int,
     state       int,
-    id          int PRIMARY key,
+    id          serial PRIMARY key,
     FOREIGN KEY (from_id)
         REFERENCES TCB.clients (client_id),
     FOREIGN KEY (to_id)
@@ -53,7 +52,7 @@ create table TCB.anonym_chats
 
 create table TCB.boards
 (
-    id       int PRIMARY KEY,
+    id       serial PRIMARY KEY,
     nickname varchar(30),
     owner_id int,
     FOREIGN KEY (owner_id)
@@ -61,9 +60,9 @@ create table TCB.boards
 );
 
 
-create table TCB.message
+create table TCB.messages
 (
-    id       int PRIMARY key,
+    id       serial PRIMARY key,
     from_id  int,
     message  text,
     chat_id  int,
