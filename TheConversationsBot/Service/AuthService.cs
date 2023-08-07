@@ -7,11 +7,8 @@ public class AuthService : IAuthService
 {
     public async Task<Client> Registration(User user)
     {
-        Client client = new Client()
-        {
-            UserId = user.Id,
-            TelegramChatId = user.TelegramClientId
-        };
+        ClientService clientService = new ClientService();
+        Client client = await clientService.Create(user);
         return client;
         
     }
