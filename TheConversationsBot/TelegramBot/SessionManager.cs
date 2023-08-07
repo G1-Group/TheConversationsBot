@@ -31,15 +31,6 @@ namespace TheConversationsBot.Service
             };
         }
     }
-
-    public class UserDataService
-    {
-        public async Task<User> GetUserByChatId(long chatId)
-        {
-            throw new NotImplementedException();
-        }
-    }
-    
 }
 
 

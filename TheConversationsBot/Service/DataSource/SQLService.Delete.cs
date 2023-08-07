@@ -8,7 +8,7 @@ public partial class SQLService
     private string _deleteQuery = $"DELETE FROM TCB.";
     public async Task DeleteUserAsync(User user)
     {
-        string userDeleteQuery = _deleteQuery + $"users WHERE id = " + user.Id.ToString();
+        string userDeleteQuery = _deleteQuery + $"users WHERE id = " + user.UserId.ToString();
         var t  = await base.ExecuteNonResult(userDeleteQuery, null);
         // Console.WriteLine(t);
     }
