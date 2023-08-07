@@ -5,7 +5,6 @@ using TheConversationsBot.TelegramBot;
 
 namespace TheConversationsBot.Service
 {
-
     public class SessionManager : ISessionManager<Session>
     {
         private readonly UserDataService _userDataService;
@@ -22,17 +21,27 @@ namespace TheConversationsBot.Service
             if (user is null)
                 throw new Exception("Bunday foydalanuvchi mavjud emas");
 
-            return new Session()
+
+            var lastSession = sessions.FindLast(x => x.User.UserId == user.UserId);
+            if (lastSession is null)
             {
-                User = user,
-                Action = null,
-                Controller = null,
-                Id = 0
-            };
+                var session = new Session()
+                {
+                    User = user,
+                    Action = null,
+                    Controller = null,
+                    Id = 0
+                };
+                sessions.Add(session);
+                return session;
+            }
+
+            return lastSession;
         }
     }
+}
 
-    public class UserDataService
+public class UserDataService
     {
         public async Task<User> GetUserByChatId(long chatId)
         {
@@ -40,6 +49,6 @@ namespace TheConversationsBot.Service
         }
     }
     
-}
+
 
 
