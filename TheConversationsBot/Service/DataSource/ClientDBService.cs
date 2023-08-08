@@ -79,7 +79,7 @@ public class ClientDBService : DataProvider, IDBServiceBase<Client>
             "telegram_chat_id, " +
             "nickname, " +
             "status, " +
-            "is_premium FROM TCB.clients where client_id = client.ClientId;";
+            $"is_premium FROM TCB.clients where client_id = {client.ClientId};";
         var resultQuery = await base.ExecuteWithResult(selectQuery, null);
         return await SqlReaderToClientModel(resultQuery);
     }
@@ -102,8 +102,7 @@ public class ClientDBService : DataProvider, IDBServiceBase<Client>
         return clients;
     }
 
-    private async Task<Client> SqlReaderToClientModel(NpgsqlDataReader reader) => new Client()
-    {
+    private async Task<Client> SqlReaderToClientModel(NpgsqlDataReader reader) => new Client() {
         ClientId = reader.GetInt64(0),
         UserId = reader.GetInt64(1),
         TelegramChatId = reader.GetInt64(2),

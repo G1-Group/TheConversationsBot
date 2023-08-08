@@ -4,9 +4,9 @@ using TheConversationsBot.Domain.Models;
 
 namespace TheConversationsBot.Service.DataSource;
 
-public class AnonymCahtDBService : DataProvider, IDBServiceBase<AnonymChat>
+public class AnonymChatDBService : DataProvider, IDBServiceBase<AnonymChat>
 {
-    public AnonymCahtDBService(string connectionString) : base(connectionString)
+    public AnonymChatDBService(string connectionString) : base(connectionString)
     {
     }
 
@@ -96,8 +96,7 @@ public class AnonymCahtDBService : DataProvider, IDBServiceBase<AnonymChat>
         return anonymChats;
     }
 
-    private async Task<AnonymChat> ReaderToAnonymChatModel(NpgsqlDataReader reader) => new AnonymChat
-    {
+    private async Task<AnonymChat> ReaderToAnonymChatModel(NpgsqlDataReader reader) => new AnonymChat {
         CreatedDate = reader.GetDateTime(0),
         FromId = reader.GetInt64(1),
         ToId = reader.GetInt64(2),
