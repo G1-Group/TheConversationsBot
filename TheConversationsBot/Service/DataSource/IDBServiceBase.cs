@@ -8,8 +8,8 @@ public interface IDBServiceBase<T>
     Task Delete(List<T> models);
     Task Updete(T model);
     Task Updete(List<T> models);
-    Task Read(T model);
-    Task Read(List<T> models);
+    Task<T> Read(T model);
+    Task<T> Read(List<T> models);
 
 
 
