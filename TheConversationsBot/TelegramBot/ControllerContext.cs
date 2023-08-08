@@ -1,4 +1,5 @@
 ﻿using Telegram.Bot.Types;
+using TheConversationsBot.Domain.Models;
 using TheConversationsBot.TelegramBot;
 
 namespace Controller;
