@@ -9,7 +9,7 @@ public interface IDBServiceBase<T>
     Task Updete(T model);
     Task Updete(List<T> models);
     Task<T> Read(T model);
-    Task<T> Read(List<T> models);
+    Task<List<T>> Read();
 
 
 
