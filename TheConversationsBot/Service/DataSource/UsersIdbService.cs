@@ -1,47 +1,49 @@
+using TheConversationsBot.Domain.Models;
+
 namespace TheConversationsBot.Service.DataSource;
 
-public class UsersDBService : DataProvider,DBServiceBase
+public class UsersIdbService : DataProvider,IDBServiceBase<User>
 {
-    public UsersDBService(string connectionString) : base(connectionString)
+    public UsersIdbService(string connectionString) : base(connectionString)
     {
     }
 
-    public Task Insert<T>(T model)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task Insert<T>(List<T> models)
+    public Task Insert(User model)
     {
         throw new NotImplementedException();
     }
 
-    public Task Delete<T>(T model)
+    public Task Insert(List<User> models)
     {
         throw new NotImplementedException();
     }
 
-    public Task Delete<T>(List<T> models)
+    public Task Delete(User model)
     {
         throw new NotImplementedException();
     }
 
-    public Task Updete<T>(T model)
+    public Task Delete(List<User> models)
     {
         throw new NotImplementedException();
     }
 
-    public Task Updete<T>(List<T> models)
+    public Task Updete(User model)
     {
         throw new NotImplementedException();
     }
 
-    public Task Read<T>(T model)
+    public Task Updete(List<User> models)
     {
         throw new NotImplementedException();
     }
 
-    public Task Read<T>(List<T> models)
+    public Task Read(User model)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task Read(List<User> models)
     {
         throw new NotImplementedException();
     }
