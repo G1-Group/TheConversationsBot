@@ -1,9 +1,4 @@
-
-using TheConversationsBot.Domain.Models;
-
-namespace TheConversationsBot.TelegramBot;
-
-//namespace TCBApp.Models;
+namespace TheConversationsBot.Domain.Models;
 
 public class Session
 {
@@ -11,4 +6,7 @@ public class Session
     public User User { get; set; }
     public string Action { get; set; }
     public string Controller { get; set; }
+    public long ChatId { get; set; }
+    public string UserLogin { get; set; }
+    public string UserPassword { get; set; }
 }
