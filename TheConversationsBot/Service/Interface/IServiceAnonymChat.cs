@@ -1,4 +1,4 @@
-using TheConversationsBot.Domain.Enums;
+using TheConversationsBot.Domain.Models;
 
 namespace TheConversationsBot.Service.Interface;
 

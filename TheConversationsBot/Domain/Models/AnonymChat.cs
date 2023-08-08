@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
+using TheConversationsBot.Domain.Enums;
 
-namespace TheConversationsBot.Domain.Enums;
+namespace TheConversationsBot.Domain.Models;
 
 public class AnonymChat
 {
