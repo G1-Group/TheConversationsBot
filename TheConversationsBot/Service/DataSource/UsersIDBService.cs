@@ -88,7 +88,23 @@ public class UsersIDBService : DataProvider,IDBServiceBase<User>
         return await SqlReaderToUsersModel(resultQuery);
     }
 
-   private async Task<User> SqlReaderToUsersModel(NpgsqlDataReader reader) => new User()
+    public async Task<List<User>> Read()
+    {
+        string selectQuery =
+            "SELECT " +
+            "telegram_client_id," +
+            "phone_number, " +
+            "password, " +
+            "is_premium FROM TCB.users where telegram_client_id = users.telegram_client_id;";
+        var resultQuery = await base.ExecuteWithResult(selectQuery, null);
+        List<User> users = new List<User>();
+        while (resultQuery.Read())
+            users.Add(await SqlReaderToUsersModel(resultQuery));
+        return users;
+        
+    }
+
+    private async Task<User> SqlReaderToUsersModel(NpgsqlDataReader reader) => new User()
        {
            TelegramClientId = reader.GetInt64(0),
            PhoneNumber = reader.GetString(1),
