@@ -5,14 +5,20 @@ namespace TheConversationsBot.Service;
 
 public class ConversationService:IConversation
 {
+    private ConversationDataService Service { get; set; }
+
+    public ConversationService()
+    {
+       
+    }
     public int CreateConversation(ChatModel chat)
     {
-        throw new NotImplementedException();
+        return Service.Insert(chat).Result;
     }
 
     public ChatModel StopConversation(long chatId)
     {
-        throw new NotImplementedException();
+        return Service.StopConversation( chatId).Result;
     }
 
     public ChatModel GetLastConversation(long chatId)
@@ -22,16 +28,16 @@ public class ConversationService:IConversation
 
     public ChatModel UpdateConversation(ChatModel chat)
     {
-        throw new NotImplementedException();
+        return Service.UpdateConversation(chat.Id, chat).Result;
     }
 
     public ChatModel GetConversation(long chatId)
     {
-        throw new NotImplementedException();
+        return Service.GetById(chatId).Result;
     }
 
     public List<ChatModel> GetAllConversation()
     {
-        throw new NotImplementedException();
+        return Service.GetAll().Result;
     }
 }
