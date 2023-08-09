@@ -3,8 +3,10 @@ using TheConversationsBot.Domain.Models;
 
 namespace TheConversationsBot.Service.Interface;
 
-public interface IClientService : IDataSarvice<Client>
+public interface IClientService 
 {
-    public Task<Client> FindByUserId(long id);
-    public Task<Client> FindByNickName(string nickName);
+    public Task<Client> CreateClient(Client data);
+    public Task<Client> RemoveClient(Client data);
+    public Task<Client> FindClient(Client data);
+    public Task<Client> UpdateClient(Client data);
 }

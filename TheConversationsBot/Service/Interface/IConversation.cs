@@ -12,5 +12,7 @@ public interface IConversation
     public ChatModel GetConversation(long chatId);
 
     public List<ChatModel> GetAllConversation();
+    
+   
 
 }
