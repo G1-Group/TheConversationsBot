@@ -1,5 +1,5 @@
 using Npgsql;
-using Telegram.Bot.Types;
+using TheConversationsBot.Domain.Models;
 
 namespace TheConversationsBot.Service.Interface;
 

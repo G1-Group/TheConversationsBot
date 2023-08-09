@@ -10,16 +10,17 @@ public class AnonymChatDBService : DataProvider, IDBServiceBase<AnonymChat>
     {
     }
 
-    public async Task Insert(AnonymChat anonymChat)
+    public async Task<AnonymChat> Insert(AnonymChat anonymChat)
     {
         string anonymChatInsertQueryTable = "INSERT INTO TCB.anonym_chats (create_date,from_id,to_id,state) ";
         string anonymChatQuery =
             $" values ({anonymChat.CreatedDate},{anonymChat.FromId},{anonymChat.ToId},{anonymChat.State});";
         string queryAnonymChat = anonymChatInsertQueryTable + anonymChatQuery;
         await base.ExecuteNonResult(queryAnonymChat, null);
+        return null;
     }
 
-    public async Task Insert(List<AnonymChat> anonymChats)
+    public async Task<List<AnonymChat>> Insert(List<AnonymChat> anonymChats)
     {
         if (anonymChats.Count != 0)
         {
@@ -38,6 +39,8 @@ public class AnonymChatDBService : DataProvider, IDBServiceBase<AnonymChat>
             string queryAnonymChats = anonymChatInsertQueryTable + anonymChatQuery;
             await base.ExecuteNonResult(queryAnonymChats, null);
         }
+
+        return null;
     }
 
     public async Task Delete(AnonymChat anonymChat)
@@ -59,15 +62,11 @@ public class AnonymChatDBService : DataProvider, IDBServiceBase<AnonymChat>
         }
     }
 
-    public async Task Updete(AnonymChat anonymChat)
+    public async Task<AnonymChat> Updete(AnonymChat anonymChat)
     {
         throw new NotImplementedException();
     }
 
-    public async Task Updete(List<AnonymChat> anonymChats)
-    {
-        throw new NotImplementedException();
-    }
 
     public async Task<AnonymChat> Read(AnonymChat anonymChat)
     {
@@ -96,7 +95,8 @@ public class AnonymChatDBService : DataProvider, IDBServiceBase<AnonymChat>
         return anonymChats;
     }
 
-    private async Task<AnonymChat> ReaderToAnonymChatModel(NpgsqlDataReader reader) => new AnonymChat {
+    private async Task<AnonymChat> ReaderToAnonymChatModel(NpgsqlDataReader reader) => new AnonymChat
+    {
         CreatedDate = reader.GetDateTime(0),
         FromId = reader.GetInt64(1),
         ToId = reader.GetInt64(2),
