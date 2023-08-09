@@ -6,44 +6,22 @@ namespace TheConversationsBot.Service;
 
 public class ClientService:IClientService
 {
-    private ClientDBService _clientDbService;
-
-    public ClientService()
-    {
-            
-    }
-
-    public Task<Client> CreateData(Client data)
+    public Task<Client> CreateClient(Client data)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Client> UpdateData(long Id, Client data)
+    public Task<Client> RemoveClient(Client data)
     {
         throw new NotImplementedException();
     }
 
-    public Task<List<Client>> GetAllData()
+    public Task<Client> FindClient(Client data)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Client> FindByIdData(long Id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<Client> DeleteData(long Id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<Client> FindByUserId(long id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<Client> FindByNickName(string nickName)
+    public Task<Client> UpdateClient(Client data)
     {
         throw new NotImplementedException();
     }

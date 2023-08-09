@@ -5,27 +5,42 @@ namespace TheConversationsBot.Service;
 
 public class BoardService:IBoardService
 {
-    public Task<Board> CreateData(Board data)
+    public Task<Board> CreateNewBoard(long ownerId, string nickName)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Board> UpdateData(long Id, Board data)
+    public Task<Message> ChangeBoardMessageStatus(long messageId, Message message)
     {
         throw new NotImplementedException();
     }
 
-    public Task<List<Board>> GetAllData()
+    public Task<Board> StopBoard(long boardId)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Board> FindByIdData(long Id)
+    public Task<Board> DeleteBoard(long id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Board> DeleteData(long Id)
+    public Task<Board> UpdateBoard(long boardId, Board boardModel)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Board> GetBoard(long boardId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<List<Board>> GetAllBoards()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Board> FindBoardByNickName(string nickName)
     {
         throw new NotImplementedException();
     }

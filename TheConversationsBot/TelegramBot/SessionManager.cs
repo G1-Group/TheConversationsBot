@@ -6,7 +6,7 @@ using TheConversationsBot.TelegramBot;
 namespace TheConversationsBot.Service
 {
 
-    public class SessionManager : ISessionManager<Session>
+    public class SessionManager 
     {
         private readonly UserDataService _userDataService;
         private List<Session> sessions => new List<Session>();
