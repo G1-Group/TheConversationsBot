@@ -10,17 +10,19 @@ public class ClientDBService : DataProvider, IDBServiceBase<Client>
     {
     }
 
-    public async Task Insert(Client client)
+    public async Task<Client> Insert(Client client)
     {
         string clientInsertQueryTable =
             "INSERT INTO TCB.clients (user_id,telegram_client_id,nickname,status,is_premium) ";
         string clientQuery =
             $" values ({client.UserId},{client.TelegramChatId},'{client.Nickname}',{client.Status},{client.IsPremium});";
         string queryclient = clientInsertQueryTable + clientQuery;
-        await base.ExecuteNonResult(queryclient, null);
+        var clientReader = await base.ExecuteWithResult(queryclient, null);
+        Client resultClient = await SqlReaderToClientModel(clientReader);
+        return resultClient;
     }
 
-    public async Task Insert(List<Client> clients)
+    public async Task<List<Client>> Insert(List<Client> clients)
     {
         if (clients.Count != 0)
         {
@@ -38,8 +40,15 @@ public class ClientDBService : DataProvider, IDBServiceBase<Client>
             }
 
             string queryclients = clientInsertQueryTable + clientQuery;
-            await base.ExecuteNonResult(queryclients, null);
+            var clientReader = await base.ExecuteWithResult(queryclients, null);
+            clients = new List<Client>();
+            while (clientReader.Read())
+            {
+                clients.Add(await this.SqlReaderToClientModel(clientReader));
+            }
         }
+
+        return clients;
     }
 
     public async Task Delete(Client client)
@@ -60,12 +69,12 @@ public class ClientDBService : DataProvider, IDBServiceBase<Client>
         }
     }
 
-    public async Task Updete(Client client)
+    public async Task<Client> Updete(Client client)
     {
         throw new NotImplementedException();
     }
 
-    public async Task Updete(List<Client> clients)
+    public async Task<List<Client>> Updete(List<Client> clients)
     {
         throw new NotImplementedException();
     }

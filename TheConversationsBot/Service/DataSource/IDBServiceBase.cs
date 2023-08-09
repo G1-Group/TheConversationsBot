@@ -2,12 +2,12 @@ namespace TheConversationsBot.Service.DataSource;
 
 public interface IDBServiceBase<T>
 {
-    Task Insert(T model);
-    Task Insert(List<T> models);
+    Task<T> Insert(T model);
+    Task<List<T>> Insert(List<T> models);
     Task Delete(T model);
     Task Delete(List<T> models);
-    Task Updete(T model);
-    Task Updete(List<T> models);
+    Task<T> Updete(T model);
+    Task<List<T>> Updete(List<T> models);
     Task<T> Read(T model);
     Task<List<T>> Read();
 

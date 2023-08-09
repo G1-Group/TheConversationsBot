@@ -10,16 +10,17 @@ public class MessageDBService : DataProvider, IDBServiceBase<Message>
     {
     }
 
-    public async Task Insert(Message message)
+    public async Task<Message> Insert(Message message)
     {
         string messageInsertQueryTable = "INSERT INTO TCB.messages (from_id,message,chat_id,type,board_id) ";
         string messageQuery =
             $" values ({message.FromId},'{message.Messages}',{message.ChatId},{message.Type},{message.BoardId});";
         string queryMessage = messageInsertQueryTable + messageQuery;
-        await base.ExecuteNonResult(queryMessage, null);
+        var messageReader = await base.ExecuteWithResult(queryMessage, null);
+        return await SqlReaderToMessageModel(messageReader);
     }
 
-    public async Task Insert(List<Message> messages)
+    public async Task<List<Message>> Insert(List<Message> messages)
     {
         if (messages.Count != 0)
         {
@@ -36,16 +37,22 @@ public class MessageDBService : DataProvider, IDBServiceBase<Message>
             }
 
             string querymessages = messageInsertQueryTable + messageQuery;
-            await base.ExecuteNonResult(querymessages, null);
+            var messageReader = await base.ExecuteWithResult(querymessages, null);
+            messages = new List<Message>();
+            while (messageReader.Read())
+            {
+                messages.Add(await SqlReaderToMessageModel(messageReader));
+            }
         }
+
+        return messages;
     }
 
-    private string _deleteQuery = $"DELETE FROM TCB.";
 
     public async Task Delete(Message message)
     {
-        string MessageDeleteQuery = _deleteQuery + $"message WHERE id = " + message.Id.ToString();
-        int result = await base.ExecuteNonResult(MessageDeleteQuery, null);
+        string MessageDeleteQuery = $"DELETE FROM TCB.messages WHERE id = " + message.Id.ToString(); 
+        await base.ExecuteNonResult(MessageDeleteQuery, null);
     }
 
     public async Task Delete(List<Message> models)
@@ -55,18 +62,19 @@ public class MessageDBService : DataProvider, IDBServiceBase<Message>
 
     private string updateQuery = $"DELETE FROM TCB.";
 
-    public async Task Updete(Message message)
+    public async Task<Message> Updete(Message message)
     {
-        var result = await this.ExecuteNonResult(updateQuery, new NpgsqlParameter[]
+        var readerMessage = await this.ExecuteWithResult(updateQuery, new NpgsqlParameter[]
         {
             new NpgsqlParameter("@p1", message.FromId),
             new NpgsqlParameter("@p2", message.Messages),
             new NpgsqlParameter("@p3", message.ChatId),
             new NpgsqlParameter("@p4", message.BoardId),
         });
+        return await SqlReaderToMessageModel(readerMessage);
     }
 
-    public async Task Updete(List<Message> models)
+    public async Task<List<Message>> Updete(List<Message> messages)
     {
         throw new NotImplementedException();
     }
