@@ -67,10 +67,6 @@ public class AnonymChatDBService : DataProvider, IDBServiceBase<AnonymChat>
         throw new NotImplementedException();
     }
 
-    public async Task<List<AnonymChat>> Updete(List<AnonymChat> anonymChats)
-    {
-        throw new NotImplementedException();
-    }
 
     public async Task<AnonymChat> Read(AnonymChat anonymChat)
     {
@@ -99,7 +95,8 @@ public class AnonymChatDBService : DataProvider, IDBServiceBase<AnonymChat>
         return anonymChats;
     }
 
-    private async Task<AnonymChat> ReaderToAnonymChatModel(NpgsqlDataReader reader) => new AnonymChat {
+    private async Task<AnonymChat> ReaderToAnonymChatModel(NpgsqlDataReader reader) => new AnonymChat
+    {
         CreatedDate = reader.GetDateTime(0),
         FromId = reader.GetInt64(1),
         ToId = reader.GetInt64(2),

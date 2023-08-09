@@ -7,10 +7,6 @@ public interface IDBServiceBase<T>
     Task Delete(T model);
     Task Delete(List<T> models);
     Task<T> Updete(T model);
-    Task<List<T>> Updete(List<T> models);
     Task<T> Read(T model);
     Task<List<T>> Read();
-
-
-
 }

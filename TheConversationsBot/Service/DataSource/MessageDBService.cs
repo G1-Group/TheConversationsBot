@@ -51,7 +51,7 @@ public class MessageDBService : DataProvider, IDBServiceBase<Message>
 
     public async Task Delete(Message message)
     {
-        string MessageDeleteQuery = $"DELETE FROM TCB.messages WHERE id = " + message.Id.ToString(); 
+        string MessageDeleteQuery = $"DELETE FROM TCB.messages WHERE id = " + message.Id.ToString();
         await base.ExecuteNonResult(MessageDeleteQuery, null);
     }
 
@@ -72,11 +72,6 @@ public class MessageDBService : DataProvider, IDBServiceBase<Message>
             new NpgsqlParameter("@p4", message.BoardId),
         });
         return await SqlReaderToMessageModel(readerMessage);
-    }
-
-    public async Task<List<Message>> Updete(List<Message> messages)
-    {
-        throw new NotImplementedException();
     }
 
 

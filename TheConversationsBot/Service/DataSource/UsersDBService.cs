@@ -23,7 +23,7 @@ public class UsersDBService : DataProvider, IDBServiceBase<User>
         string userQuery =
             $" values ({user.TelegramClientId},{user.PhoneNumber},'{user.Password}');";
         string queryUser = userInsertQueryTable + userQuery;
-        var resutReader =  await base.ExecuteWithResult(queryUser, null);
+        var resutReader = await base.ExecuteWithResult(queryUser, null);
         return await SqlReaderToUsersModel(resutReader);
     }
 
@@ -46,7 +46,7 @@ public class UsersDBService : DataProvider, IDBServiceBase<User>
             }
 
             string queryUsers = usersInsertQueryTable + usersQuery;
-            var resultReader =  await base.ExecuteWithResult(queryUsers, null);
+            var resultReader = await base.ExecuteWithResult(queryUsers, null);
             users = new List<User>();
             while (resultReader.Read())
             {
@@ -81,10 +81,6 @@ public class UsersDBService : DataProvider, IDBServiceBase<User>
         throw new NotImplementedException();
     }
 
-    public Task<List<User>> Updete(List<User> models)
-    {
-        throw new NotImplementedException();
-    }
 
     public async Task<User> Read(User users)
     {
