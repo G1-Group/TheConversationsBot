@@ -8,6 +8,11 @@ public class ClientInfoController:ControllerBase
     {
     }
 
+    protected override async Task Index(Context context)
+    {
+        throw new NotImplementedException();
+    }
+
     protected override async Task HandleAction(Context context)
     {
         throw new NotImplementedException();

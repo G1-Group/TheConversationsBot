@@ -1,9 +1,8 @@
-﻿using TheConversationsBot.TelegramBot.Extensions;
 using TheConversationsBot.TelegramBot.Managers;
 
 namespace TheConversationsBot.TelegramBot.Controllers;
 
-public class ConversationController : ControllerBase
+public class ConversationController:ControllerBase
 {
     public ConversationController(ManagerController managerController) : base(managerController)
     {
@@ -11,7 +10,7 @@ public class ConversationController : ControllerBase
 
     protected override async Task Index(Context context)
     {
-        await context.SendTextMessage("Conversations", context.ConversationStartReplyKeyboardMarkup());
+        throw new NotImplementedException();
     }
 
     protected override async Task HandleAction(Context context)
