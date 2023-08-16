@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Telegram.Bot.Types;
-using TheConversationsBot.Service.DataContext;
+using TheConversationsBot.Service;
 
 #nullable disable
 

@@ -4,7 +4,7 @@ namespace TheConversationsBot.Service.DataSource;
 
 public class ClientDataService : DataServiceBase<Client>, IClientDataService
 {
-    public ClientDataService(DataContext.DataContext context) : base(context)
+    public ClientDataService(DataContext context) : base(context)
     {
     }
 }
