@@ -4,7 +4,7 @@ using TheConversationsBot.Domain.Enums;
 using TheConversationsBot.Domain.Models;
 
 
-namespace TheConversationsBot.Service.DataContext;
+namespace TheConversationsBot.Service;
 
 public class DataContext : DbContext
 {
