@@ -8,7 +8,6 @@ namespace TheConversationsBot.Domain.Models;
 [Table("clients")]
 public class Client : ModelBase
 {
-    [Column("client_id")] public long ClientId { get; set; }
     [Column("user_id")] public long UserId { get; set; }
     [NotMapped] public User User { get; set; }
     [Column("user_name")] public string UserName { get; set; }
