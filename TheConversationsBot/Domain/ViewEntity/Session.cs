@@ -11,13 +11,13 @@ public class Session:ModelBase
 
     public Session()
     {
-        RegistianView = new RegistianView();
+        RegistianView = new SignUpView();
         ConversationView = new ConversationView();
         BoardView = new BoardView();
         LoginView = new LoginView();
     }
     public LoginView LoginView { get; set; }
-    public RegistianView RegistianView { get; set; }
+    public SignUpView RegistianView { get; set; }
     public BoardView BoardView { get; set; }
     public ConversationView ConversationView { get; set; }
     
