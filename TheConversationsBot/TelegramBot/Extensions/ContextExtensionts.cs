@@ -15,7 +15,7 @@ public static class ContextExtensionts
         await controllerBase.Handle(context);
     }
 
-    public static async Task SendTextMessage(Context context, string text, IReplyMarkup? replyMarkup = null,
+    public static async Task SendTextMessage(this Context context, string text, IReplyMarkup? replyMarkup = null,
         ParseMode? parseMode = null)
     {
         await TelegramBot.BotClient.SendTextMessageAsync(context.Session.TelegramChatId, text, replyMarkup: replyMarkup,
