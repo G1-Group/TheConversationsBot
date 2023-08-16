@@ -1,11 +1,14 @@
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TheConversationsBot.Domain.Models;
 
-public class User
+[Table("users")]
+public class User : ModelBase
 {
-    [Description("id")] public long Id { get; set; }
-    [Description("telegram_client_id")] public long TelegramClientId { get; set; }
-    [Description("phone_number")] public string PhoneNumber { get; set; }
-    [Description("password")] public string Password { get; set; }
+    [Column("phone_number")] public string PhoneNumber { get; set; }
+    [Column("password")] public string Password { get; set; }
+    [Column("telegram_client_id")] public long TelegramClientId { get; set; }
+    
+    [NotMapped] public Client Client { get; set; }
 }

@@ -1,5 +1,8 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace TheConversationsBot.Domain.Models;
 
+[NotMapped]
 public class Session
 {
     public long Id { get; set; }

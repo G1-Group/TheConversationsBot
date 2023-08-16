@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TheConversationsBot.Domain.Models;
 
-public class Log
+[Table("logs")]
+public class Log : ModelBase
 {
-    [Description("Datetime")] public DateTime Date { get; set; }
-    [Description("from_id")] public long FromId { get; set; }
-    [Description("to_id")] public long ToId { get; set; }
-    [Description("actions")] public string Action { get; set; }
-    [Description("exception_message")] public string ExceptionMessage { get; set; }
+    [Column("Datetime")] public DateTime Date { get; set; }
+    [Column("from_id")] public long FromId { get; set; }
+    [Column("to_id")] public long ToId { get; set; }
+    [Column("update_message")] public Telegram.Bot.Types.Message UpdateMessage { get; set; }
+    [Column("exception_message")] public string ExceptionMessage { get; set; }
 }

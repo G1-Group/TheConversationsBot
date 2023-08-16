@@ -1,10 +1,18 @@
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TheConversationsBot.Domain.Models;
 
-public class Board
+[Table("boards")]
+public class Board : ModelBase
 {
-    [Description("id")] public long BoardId { get; set; }
-    [Description("nickname")] public string Nickname { get; set; }
-    [Description("owner_id")] public long OwnerId { get; set; }
+    [Column("nickname")] public string NickName { get; set; }
+
+    [Column("owner_id")] public long OwnerId { get; set; }
+
+    [NotMapped] public Client Owner { get; set; }
+
+    [Column("board_status")] public BoardStatus BoardStatus { get; set; }
+
+    [NotMapped] public List<Message> Messages { get; set; }
 }
