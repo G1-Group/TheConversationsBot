@@ -1,3 +1,5 @@
+using TheConversationsBot.TelegramBot.Controllers;
+
 namespace TheConversationsBot.TelegramBot.Managers;
 
 public class ManagerController
@@ -8,9 +10,9 @@ public class ManagerController
     }
 
 
-    public async Task GetControllerBySessionData()
+    public async Task<ControllerBase> GetControllerBySessionData()
     {
-        
+        return null;
     }
     
 }
