@@ -13,8 +13,8 @@ using TheConversationsBot.Service;
 namespace TheConversationsBot.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230816085025_CreatedDatabase")]
-    partial class CreatedDatabase
+    [Migration("20230816114412_updateEntity")]
+    partial class updateEntity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,10 +64,6 @@ namespace TheConversationsBot.Migrations
                         .HasColumnName("id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
-                    b.Property<long>("ClientId")
-                        .HasColumnType("bigint")
-                        .HasColumnName("client_id");
 
                     b.Property<bool>("IsPremium")
                         .HasColumnType("boolean")
@@ -133,7 +129,7 @@ namespace TheConversationsBot.Migrations
                     b.ToTable("conversations", "Conversations");
                 });
 
-            modelBuilder.Entity("TheConversationsBot.Domain.Models.Log", b =>
+            modelBuilder.Entity("TheConversationsBot.Domain.Models.LogView", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

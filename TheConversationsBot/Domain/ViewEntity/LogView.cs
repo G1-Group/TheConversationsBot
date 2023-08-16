@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace TheConversationsBot.Domain.Models;
 
 [Table("logs")]
-public class Log : ModelBase
+public class LogView : ModelBase
 {
     [Column("Datetime")] public DateTime Date { get; set; }
     [Column("from_id")] public long FromId { get; set; }

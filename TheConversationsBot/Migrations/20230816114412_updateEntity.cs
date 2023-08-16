@@ -8,7 +8,7 @@ using Telegram.Bot.Types;
 namespace TheConversationsBot.Migrations
 {
     /// <inheritdoc />
-    public partial class CreatedDatabase : Migration
+    public partial class updateEntity : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -57,7 +57,6 @@ namespace TheConversationsBot.Migrations
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    client_id = table.Column<long>(type: "bigint", nullable: false),
                     user_id = table.Column<long>(type: "bigint", nullable: false),
                     user_name = table.Column<string>(type: "text", nullable: false),
                     nickname = table.Column<string>(type: "text", nullable: false),

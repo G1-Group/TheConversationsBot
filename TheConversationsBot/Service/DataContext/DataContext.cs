@@ -40,7 +40,7 @@ public class DataContext : DbContext
             .HasColumnType("jsonb");
         
         modelBuilder
-            .Entity<Log>()
+            .Entity<LogView>()
             .Property(x => x.UpdateMessage)
             .HasColumnType("jsonb");
         
